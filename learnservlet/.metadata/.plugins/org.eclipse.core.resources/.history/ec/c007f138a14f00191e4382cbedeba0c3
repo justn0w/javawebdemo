@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="" method="post">
+		用户名:<input type="text" name="username"><br>
+		
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,5 @@
+package com.justnow.servlet;
+
+public class Hello implents Servlet{
+
+}

@@ -1,0 +1,5 @@
+package com.justnow.login;
+
+public class LoginServlet {
+
+}

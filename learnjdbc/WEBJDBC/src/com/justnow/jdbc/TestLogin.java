@@ -23,7 +23,7 @@ public class TestLogin {
 		//1. 注册驱动
 		Class.forName("com.mysql.jdbc.Driver");
 		//2. 获取连接
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "justnow314");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "*");
 		//3. 编写sql语句
 		String sql = "select * from users where username=? and password=?";
 		//4. 创建预处理对象
@@ -56,7 +56,7 @@ public class TestLogin {
 		//1.注册驱动
 		Class.forName("com.mysql.jdbc.Driver");
 		//2. 获取连接
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "justnow314");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/test", "root", "*");
 		//3. 创建执行SQL语句的对象
 		Statement stmt = conn.createStatement();
 		//4.书写一个sql语句
