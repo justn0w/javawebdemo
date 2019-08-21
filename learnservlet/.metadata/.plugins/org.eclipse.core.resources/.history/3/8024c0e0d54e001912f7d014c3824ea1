@@ -1,0 +1,7 @@
+package com.justnow.servlet;
+
+import javax.servlet.Servlet;
+
+public class QuickStart implements Servlet{
+
+}
