@@ -23,4 +23,16 @@ public class UserController {
         mv.setViewName("userList");
         return mv;
     }
+
+    @RequestMapping("/add")
+    public String add(){
+        return "userInsert";
+    }
+
+    @RequestMapping("save")
+    public String save(User user){
+        userService.save(user);
+        return "redirect:findAll";
+    }
+
 }

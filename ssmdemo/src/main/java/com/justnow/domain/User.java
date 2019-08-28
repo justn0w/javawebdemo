@@ -1,10 +1,13 @@
 package com.justnow.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 public class User {
     private int id;
     private String username;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
     private String sex;
     private String address;

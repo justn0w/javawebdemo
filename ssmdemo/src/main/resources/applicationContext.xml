@@ -41,5 +41,12 @@
         <property name="basePackage" value="com.justnow.dao"/>
     </bean>
 
+    <!--3 配置Spring的声明式事务管理 -->
+    <!--3.1 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
 
+    <!--3.2 事务驱动注解-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>
