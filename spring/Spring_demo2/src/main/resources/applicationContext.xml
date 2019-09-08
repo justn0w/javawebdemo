@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--配置 service -->
+<!-- 第一种方式，使用默认无参构造函数
+    <bean id="userService" class="com.justnow.service.impl.UserServiceImpl" scope="prototype"/>
+-->
+    <!--第二种方式，spring管理静态工厂-使用静态工厂的方法对象创建-->
+<!--
+    <bean id="userService" class="com.justnow.factory.StaticFactory" factory-method="createUserService" />
+-->
+    <!--第三种方式，spring管理实例工厂，使用实例工厂的方法创建对象-->
+    <bean id="instanceFactory" class="com.justnow.factory.InstanceFactory"/>
+    <bean id="userService" factory-bean="instanceFactory" factory-method="createUserService" />
+</beans>
