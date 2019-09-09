@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--配置 service -->
@@ -35,7 +36,7 @@
         ref：给属性赋值是其他 bean 类型的
         value：给属性赋值是基本数据类型和 string 类型的
     实际开发中，此种方式用的较多。
--->
+
     <bean id="userService" class="com.justnow.service.impl.UserServiceImpl">
         <property name="name" value="test"/>
         <property name="age" value="21"/>
@@ -43,5 +44,7 @@
     </bean>
 
     <bean id="now" class="java.util.Date" />
-
+-->
+    <bean id="userService" class="com.justnow.service.impl.UserServiceImpl" p:name="testp" p:age="23" p:birthdy-ref="now"/>
+    <bean id="now" class="java.util.Date" />
 </beans>
