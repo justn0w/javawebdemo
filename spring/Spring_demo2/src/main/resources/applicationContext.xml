@@ -45,6 +45,58 @@
 
     <bean id="now" class="java.util.Date" />
 -->
+    <!--使用p命名空间-->
+<!--
     <bean id="userService" class="com.justnow.service.impl.UserServiceImpl" p:name="testp" p:age="23" p:birthdy-ref="now"/>
     <bean id="now" class="java.util.Date" />
+-->
+    <!-- 注入集合数据
+        List 结构的：
+            array,list,set
+        Map 结构的
+            map,entry,props,prop
+-->
+    <bean id="userService" class="com.justnow.service.impl.UserServiceImpl2">
+        <!-- 在注入集合数据时，只要结构相同，标签可以互换 -->
+        <!-- 给数组注入数据 -->
+        <property name="myStrs">
+            <array>
+                <value>AAA</value>
+                <value>BBB</value>
+                <value>CCC</value>
+            </array>
+        </property>
+        <!-- 注入 list 集合数据 -->
+        <property name="myList">
+            <list>
+                <value>AAA</value>
+                <value>BBB</value>
+                <value>CCC</value>
+            </list>
+        </property>
+        <!-- 注入 set 集合数据 -->
+        <property name="mySet">
+            <set>
+                <value>AAA</value>
+                <value>BBB</value>
+                <value>CCC</value>
+            </set>
+        </property>
+        <!-- 注入 Map 数据 -->
+        <property name="myMap">
+            <props>
+                <prop key="testA">aaa</prop>
+                <prop key="testB">bbb</prop>
+            </props>
+        </property>
+        <!-- 注入 properties 数据 -->
+        <property name="myProps">
+            <map>
+                <entry key="testA" value="aaa"></entry>
+                <entry key="testB">
+                    <value>bbb</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
 </beans>
