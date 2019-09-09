@@ -25,4 +25,14 @@ public class Test01 {
         IUserService userService = (IUserService) context.getBean("userService");
         userService.save();
     }
+
+    /**
+     * 测试通过set方法实现依赖注入
+     */
+    @Test
+    public void testSet(){
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        IUserService userService = (IUserService) context.getBean("userService");
+        userService.save();
+    }
 }

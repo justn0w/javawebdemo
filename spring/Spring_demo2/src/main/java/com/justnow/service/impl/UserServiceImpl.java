@@ -10,12 +10,16 @@ public class UserServiceImpl implements IUserService {
     private Integer age;
     private Date birthdy;
 
-    public UserServiceImpl() {
+    //set 方法注入
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public UserServiceImpl(String name, Integer age, Date birthdy){
-        this.name = name;
+    public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public void setBirthdy(Date birthdy) {
         this.birthdy = birthdy;
     }
 
@@ -23,7 +27,4 @@ public class UserServiceImpl implements IUserService {
         System.out.println(name+","+age+","+birthdy);
     }
 
-/*    public void findAll() {
-        System.out.println("假装打印了数据库中的所有数据");
-    }*/
 }
