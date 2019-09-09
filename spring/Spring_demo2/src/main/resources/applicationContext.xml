@@ -12,6 +12,16 @@
     <bean id="userService" class="com.justnow.factory.StaticFactory" factory-method="createUserService" />
 -->
     <!--第三种方式，spring管理实例工厂，使用实例工厂的方法创建对象-->
+<!--
     <bean id="instanceFactory" class="com.justnow.factory.InstanceFactory"/>
     <bean id="userService" factory-bean="instanceFactory" factory-method="createUserService" />
+-->
+
+    <!--通过构造函数实现依赖注入-->
+    <bean id="userService" class="com.justnow.service.impl.UserServiceImpl" >
+        <constructor-arg name="name" value="张三"></constructor-arg>
+        <constructor-arg name="age" value="18"></constructor-arg>
+        <constructor-arg name="birthdy" ref="now"></constructor-arg>
+    </bean>
+    <bean id="now" class="java.util.Date" />
 </beans>
